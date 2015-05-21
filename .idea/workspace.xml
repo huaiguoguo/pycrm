@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c461d17-6764-4778-bc8e-e285bb78b0ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pycrm.iml" afterPath="$PROJECT_DIR$/.idea/pycrm.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pycrm/settings.py" afterPath="$PROJECT_DIR$/pycrm/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pycrm/urls.py" afterPath="$PROJECT_DIR$/pycrm/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pycrm/wsgi.py" afterPath="$PROJECT_DIR$/pycrm/wsgi.py" />
-    </list>
+    <list default="true" id="1c461d17-6764-4778-bc8e-e285bb78b0ba" name="Default" comment="" />
     <ignored path="pycrm.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
