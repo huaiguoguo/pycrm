@@ -142,7 +142,7 @@ body, #splitBar { background:#cdef7d;}
 
 #header, #header .headerNav { background:url(../green/images/header_bg.png) repeat-x;}
 #header { background-color:#5b9700;}
-#header .logo { background:url(../default/images/logo.png) no-repeat;}
+/* #header .logo { background:url(../default/images/logo.png) no-repeat;} */
 #header .nav li { float:left; margin-left:-1px; padding:0 8px; line-height:11px; background:url(../green/images/listLine.png) no-repeat;}
 #header .nav li a { color:#FFF;}
 #header .themeList li div { background:url(../default/images/themeButton.png) no-repeat;}
@@ -159,7 +159,7 @@ body, #splitBar { background:#cdef7d;}
 #taskbar .taskbarLeft, #taskbar .taskbarRight { background:url(../default/images/layout/taskbar_control.png) no-repeat;}
 
 /* Menu */
-#navMenu, #navMenu li, #navMenu li.selected a, #navMenu li.selected span { background:url(../default/images/menu/menu.png) no-repeat;}
+#navMenu, #navMenu li, #navMenu li.selected a, #navMenu li.selected span { /* background:url(../default/images/menu/menu.png) no-repeat; */ }
 #navMenu { background-color:#1871dd;}
 #navMenu li a, #navMenu li span { color:#FFF;}
 #navMenu li.selected span { color:#000;}
