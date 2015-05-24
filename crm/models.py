@@ -1,26 +1,30 @@
+from MySQLdb import *
 from django.db import models
+# from django_mongoengine import Document
+
 # Create your models here.
 
+
+
+
+
 class Department(models.Model):
-    id = models.IntegerField(max_length=2)
-    departmentname = models.CharField()
+    departmentname = models.CharField(max_length=20, default=NULL)
 
 class Saler(models.Model):
-    id = models.IntegerField(max_length=11)
-    salername = models.CharField()
-    mobile = models.IntegerField()
-    qq = models.IntegerField(max_length=12)
+    salername = models.CharField(max_length=20, default=NULL)
+    mobile = models.IntegerField(default=NULL)
+    qq = models.IntegerField(default=NULL)
     department = models.ForeignKey(Department)
-    islead = models.IntegerField()
+    islead = models.IntegerField(default=NULL)
 
 class Customer(models.Model):
-    id = models.IntegerField(max_length=11)
-    username = models.CharField(max_length=255)
-    company = models.CharField(max_length=255)
-    mobile = models.IntegerField(max_length=255)
-    qq = models.IntegerField(max_length=12)
-    wangwang = models.CharField()
+    username = models.CharField(max_length=20)
+    company = models.CharField(max_length=40)
+    mobile = models.IntegerField(default=NULL)
+    qq = models.IntegerField(default=NULL)
+    wangwang = models.CharField(max_length=10)
     saler = models.ForeignKey(Saler)
-    gender = models.IntegerField(max_length=1)
-    createdate = models.TimeField()
+    gender = models.IntegerField(default=NULL)
+    createdate = models.DateTimeField()
 

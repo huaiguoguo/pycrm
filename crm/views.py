@@ -18,6 +18,7 @@ def user(request):
 
 # 客户管理
 def customer(request):
+    customerList = Customer.objects.all()
     return render(request, 'customer.html', locals())
 
 # 订单管理

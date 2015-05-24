@@ -75,10 +75,46 @@ WSGI_APPLICATION = 'pycrm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+# MongoDB settings
+# MONGODB_DATABASES = {
+#     'default': {'name': 'django_mongoengine'}
+# }
+# DJANGO_MONGOENGINE_OVERRIDE_ADMIN = True
+
+
+
 DATABASES = {
-    'default': {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'crm',
+        'USER': 'crm',
+        'PASSWORD': 'mycrm',
+        'HOST': '121.42.14.88',
+        'PORT': '3306',
+        # 'active': True,
+        'option': {
+            'init_command': 'SET storage_engine=INNODB',
+            # 'read_default_file': '/path/to/my.cnf',
+        },
+    },
+    'Mysql': {
+        # 'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        # 'active': True,
+        'option': {
+            'init_command': 'SET storage_engine=INNODB',
+            # 'read_default_file': '/path/to/my.cnf',
+        },
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -88,7 +124,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

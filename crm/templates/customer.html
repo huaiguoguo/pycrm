@@ -73,7 +73,6 @@
 	<table class="table" width="100%" layoutH="138">
 		<thead>
 			<tr>
-				<th width="80"></th>
 				<th width="120">客户号</th>
 				<th>客户名称</th>
 				<th width="100">客户类型</th>
@@ -84,14 +83,15 @@
 			</tr>
 		</thead>
 		<tbody>
-        {% for foo in request %}
+        {% for foo in customerList %}
 			<tr target="sid_user" rel="1">
-				<td>天津农信社</td>
-				<td>A120113196309052434</td>
-				<td>天津市华建装饰工程有限公司</td>
-				<td>联社营业部</td>
-				<td>29385739203816293</td>
-				<td>5级</td>
+				<td>{{ foo.id }}</td>
+				<td>{{ foo.username }}</td>
+				<td>{{ foo.username }}</td>
+				<td>{{ foo.username }}</td>
+				<td>{{ foo.username }}</td>
+				<td>{{ foo.username }}</td>
+				<td>{{ foo.username }}</td>
 				<td>政府机构</td>
 				<td>2009-05-21</td>
 			</tr>
