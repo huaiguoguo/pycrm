@@ -1,0 +1,68 @@
+{% if menuName == 'order' %}
+    <div class="accordion" fillSpace="sideBar">
+        <div class="accordionHeader">
+            <h2><span>Folder</span>典型页面</h2>
+        </div>
+        <div class="accordionContent">
+            <ul class="tree treeFolder treeCheck">
+                <li><a href="demo_upload.html" target="navTab" rel="demo_upload">文件上传表单提交示例</a></li>
+                <li><a href="demo_page1.html" target="navTab" rel="demo_page1">查询我的客户</a></li>
+                <li><a href="demo_page1.html" target="navTab" rel="demo_page2">表单查询页面</a></li>
+                <li><a href="demo_page4.html" target="navTab" rel="demo_page4">表单录入页面</a></li>
+                <li><a href="demo_page5.html" target="navTab" rel="demo_page5">有文本输入的表单</a></li>
+            </ul>
+        </div>
+        <div class="accordionHeader">
+            <h2><span>Folder</span>流程演示</h2>
+        </div>
+        <div class="accordionContent">
+            <ul class="tree">
+                <li><a href="newPage1.html" target="dialog" rel="dlg_page">列表</a></li>
+            </ul>
+        </div>
+    </div>
+{% elif menuName == 'index' %}
+
+{% elif menuName == 'market' %}
+
+    <div class="accordion" fillSpace="sidebar">
+        <div class="accordionHeader">
+            <h2><span></span>邮件营销</h2>
+        </div>
+        <div class="accordionContent">
+            <ul class="tree treeFolder">
+                <li><a href="/" target="navTab" rel="page1">邮件设置</a></li>
+                <li><a href="/user" target="navTab" rel="page1">邮件模板</a></li>
+                <li><a href="" target="navTab" rel="external" external="true">邮件群发</a></li>
+                <li><a href="" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
+                <li><a href="" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>
+            </ul>
+        </div>
+        <div class="accordionHeader">
+            <h2><span></span>短信营销</h2>
+        </div>
+        <div class="accordionContent">
+            <ul class="tree treeFolder">
+                <li><a href="javascript:void(0)">接口设置</a> </li>
+                <li><a href="javascript:void(0)">短信模板</a> </li>
+                <li><a href="javascript:void(0)">短信群发</a> </li>
+            </ul>
+        </div>
+    </div>
+
+{% elif menuName == 'oabc' %}
+
+{% else %}
+    <div class="accordion" fillSpace="sidebar">
+        <div class="accordionHeader">
+            <h2><span></span>设置</h2>
+        </div>
+        <div class="accordionContent">
+            <ul class="tree treeFolder">
+                        <li><a href="/customer" target="navTab" rel="page1">客户列表</a></li>
+                        <li><a href="/addcustomer" target="navTab" rel="page2">添加客户</a></li>
+            </ul>
+        </div>
+    </div>
+{% endif %}
+

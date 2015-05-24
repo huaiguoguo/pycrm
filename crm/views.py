@@ -1,5 +1,7 @@
 #*-*coding:utf8*-*#
 from django.shortcuts import render
+from django.http import HttpResponse,HttpRequest,Http404
+from crm.models import *
 
 # Create your views here.
 
@@ -45,3 +47,10 @@ def wechat(request):
 # 系统设置
 def setting(request):
     return render(request, 'setting.html', locals())
+
+
+
+# 左侧菜单
+def menu(request, menuName):
+    name = menuName
+    return render(request, 'menu.html', locals())

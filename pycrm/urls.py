@@ -18,9 +18,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
     url(r'^index/', 'crm.views.index'),
     url(r'^user/', 'crm.views.user'),
-    url(r'^customer', 'crm.views.customer'),
+    url(r'^customer/', 'crm.views.customer'),
     url(r'^order/', 'crm.views.order'),
     url(r'^product/', 'crm.views.product'),
     url(r'^work/', 'crm.views.work'),
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^service/', 'crm.views.service'),
     url(r'^wechat/', 'crm.views.wechat'),
     url(r'^setting/', 'crm.views.setting'),
+    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.views.menu'),
 ]
