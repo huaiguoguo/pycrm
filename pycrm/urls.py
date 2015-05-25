@@ -15,19 +15,25 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from crm.controller import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^index/', 'crm.views.index'),
-    url(r'^user/', 'crm.views.user'),
-    url(r'^customer/', 'crm.views.customer'),
-    url(r'^order/', 'crm.views.order'),
-    url(r'^product/', 'crm.views.product'),
-    url(r'^work/', 'crm.views.work'),
-    url(r'^market/', 'crm.views.market'),
-    url(r'^service/', 'crm.views.service'),
-    url(r'^wechat/', 'crm.views.wechat'),
-    url(r'^setting/', 'crm.views.setting'),
-    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.views.menu'),
+    # url(r'^', 'crm.controller.customer.index'),
+    url(r'^index/', 'crm.controller.customer.index'),
+
+    url(r'^user/', 'crm.controller.user.index'),
+
+    url(r'^customer/', 'crm.controller.customer.customer'),
+    url(r'^addcustomer/', 'crm.controller.customer.addcustomer'),
+
+    url(r'^order/', 'crm.controller.order.index'),
+    url(r'^product/', 'crm.controller.product.index'),
+    url(r'^work/', 'crm.controller.work.index'),
+    url(r'^market/', 'crm.controller.market.index'),
+    url(r'^service/', 'crm.controller.service.index'),
+    url(r'^wechat/', 'crm.controller.wechat.index'),
+    url(r'^setting/', 'crm.controller.setting.index'),
+    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.controller.menu.index'),
 ]
