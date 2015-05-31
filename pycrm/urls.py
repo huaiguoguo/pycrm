@@ -26,7 +26,7 @@ urlpatterns = patterns('crm.controller',
 
     url(r'^customer/$', 'customer.customer'),
     url(r'^customer/addcustomer/$', 'customer.addcustomer'),
-    url(r'^order/', 'order.index'),
+    url(r'^order/', 'crm.order.index'),
     url(r'^product/', 'product.index'),
     url(r'^work/', 'work.index'),
     url(r'^market/', 'market.index'),
@@ -35,5 +35,5 @@ urlpatterns = patterns('crm.controller',
     url(r'^setting/', 'setting.index'),
 
     # 下面是左侧菜单
-    url(r'^menu/(?P<menuName>(\w){1,10})', 'menu.index'),
+    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
 )
