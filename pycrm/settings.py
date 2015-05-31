@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'crm',
         'USER': 'crm',
         'PASSWORD': 'mycrm',
-        'HOST': '121.42.14.88',
+        'HOST': '',
         'PORT': '3306',
         # 'active': True,
         'option': {
