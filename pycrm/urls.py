@@ -13,27 +13,27 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
-from crm.controller import *
 
-urlpatterns = [
+
+urlpatterns = patterns('crm.controller',
     url(r'^admin/', include(admin.site.urls)),
+    # url(r'^', 'customer.index'),
+    url(r'^index/', 'customer.index'),
 
-    # url(r'^', 'crm.controller.customer.index'),
-    url(r'^index/', 'crm.controller.customer.index'),
+    url(r'^user/', 'user.index'),
 
-    url(r'^user/', 'crm.controller.user.index'),
+    url(r'^customer/$', 'customer.customer'),
+    url(r'^customer/addcustomer/$', 'customer.addcustomer'),
+    url(r'^order/', 'order.index'),
+    url(r'^product/', 'product.index'),
+    url(r'^work/', 'work.index'),
+    url(r'^market/', 'market.index'),
+    url(r'^service/', 'service.index'),
+    url(r'^wechat/', 'wechat.index'),
+    url(r'^setting/', 'setting.index'),
 
-    url(r'^customer/', 'crm.controller.customer.customer'),
-    url(r'^addcustomer/', 'crm.controller.customer.addcustomer'),
-
-    url(r'^order/', 'crm.controller.order.index'),
-    url(r'^product/', 'crm.controller.product.index'),
-    url(r'^work/', 'crm.controller.work.index'),
-    url(r'^market/', 'crm.controller.market.index'),
-    url(r'^service/', 'crm.controller.service.index'),
-    url(r'^wechat/', 'crm.controller.wechat.index'),
-    url(r'^setting/', 'crm.controller.setting.index'),
-    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.controller.menu.index'),
-]
+    # 下面是左侧菜单
+    url(r'^menu/(?P<menuName>(\w){1,10})', 'menu.index'),
+)

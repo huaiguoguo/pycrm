@@ -19,5 +19,6 @@ def customer(request):
     customerList = Customer.objects.all()
     return render(request, 'custormer/customer.html', locals())
 
+# 添加客户
 def addcustomer(request):
     return render(request, 'custormer/add.html', locals())
