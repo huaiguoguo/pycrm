@@ -3,8 +3,8 @@ __author__ = 'guo'
 from django.conf.urls import include, url, patterns
 
 
-urlpatterns = patterns('crm.views',
-    url(r'^user/', 'index'),
-    # 下面是左侧菜单
-    url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
+urlpatterns = patterns('order.views',
+    url(r'^index/$', 'index'),
+    # # 下面是左侧菜单
+    # url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
 )
