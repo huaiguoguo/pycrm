@@ -19,20 +19,21 @@ from django.contrib import admin
 
 urlpatterns = patterns('crm.controller',
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^', 'customer.index'),
-    url(r'^index/', 'customer.index'),
 
-    url(r'^user/', 'user.index'),
 
-    url(r'^customer/$', 'customer.customer'),
-    url(r'^customer/addcustomer/$', 'customer.addcustomer'),
-    url(r'^order/', 'crm.order.index'),
-    url(r'^product/', 'product.index'),
-    url(r'^work/', 'work.index'),
-    url(r'^market/', 'market.index'),
-    url(r'^service/', 'service.index'),
-    url(r'^wechat/', 'wechat.index'),
-    url(r'^setting/', 'setting.index'),
+
+    url(r'^', include('user.urls', namespace='user', app_name='user')),
+    url(r'^index/', include('user.urls', namespace='user', app_name='user')),
+
+    url(r'^user/', include('user.urls', namespace='user', app_name='user')),
+    url(r'^customer', include('customer.urls', namespace='customer', app_name='customer')),
+    url(r'^order/', include('order.urls', namespace='order', app_name='order')),
+    url(r'^product/', include('product.urls', namespace='product', app_name='product')),
+    url(r'^work/', include('work.urls', namespace='work', app_name='work')),
+    url(r'^market/', include('market.urls', namespace='market', app_name='market')),
+    url(r'^service/', include('service.urls', namespace='service', app_name='service')),
+    url(r'^wechat/', include('wechat.urls', namespace='wechat', app_name='wechat')),
+    url(r'^setting/', include('setting.urls', namespace='setting', app_name='setting')),
 
     # 下面是左侧菜单
     url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
