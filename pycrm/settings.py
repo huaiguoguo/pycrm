@@ -56,7 +56,7 @@ ROOT_URLCONF = 'pycrm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'crm',
         'USER': 'crm',
         'PASSWORD': 'mycrm',
-        'HOST': '',
+        'HOST': '121.42.14.88',
         'PORT': '3306',
         # 'active': True,
         'option': {
