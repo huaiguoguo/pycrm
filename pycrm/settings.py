@@ -148,7 +148,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILE_DIRS = (
-    ("dwz", os.path.join(STATIC_ROOT, 'dwz').replace('\\', '/')),
+    os.path.join(BASE_DIR, "static"),
+    # ("dwz", os.path.join(STATIC_ROOT, 'dwz').replace('\\', '/')),
 )
 
 TEMPLATE_DIRS = (
