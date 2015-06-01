@@ -13,7 +13,8 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url, patterns
+from django.conf import settings
+from django.conf.urls import include, url, patterns, static
 from django.contrib import admin
 
 
@@ -21,9 +22,7 @@ urlpatterns = patterns(
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^', include('crm.urls', namespace='crm', app_name='crm')),
-
     url(r'^crm/', include('crm.urls', namespace='crm', app_name='crm')),
-
     url(r'^user/', include('user.urls', namespace='user', app_name='user')),
     url(r'^customer/', include('customer.urls', namespace='customer', app_name='customer')),
     url(r'^order/', include('order.urls', namespace='order', app_name='order')),
@@ -33,6 +32,8 @@ urlpatterns = patterns(
     url(r'^service/', include('service.urls', namespace='service', app_name='service')),
     url(r'^wechat/', include('wechat.urls', namespace='wechat', app_name='wechat')),
     url(r'^setting/', include('setting.urls', namespace='setting', app_name='setting')),
+    # url(r'^site_static/(\?P.*)', 'django.views.static.serve', {'document_root': settings.STATIC_URL}),
     # 下面是左侧菜单
     # url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
 )
+
