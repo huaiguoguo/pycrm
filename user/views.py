@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # 主页
 def index(request):
-    return render(request, 'index/index.html', locals())
+    return render(request, 'user/user.html', locals())
 
 # 左侧菜单
 def menu(request, menuName):

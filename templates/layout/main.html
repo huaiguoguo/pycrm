@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>标题</title>
 {% load staticfiles %}
-<link href="{% static "/static/dwz/themes/default/style.css" %}" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/static/dwz/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="/static/dwz/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="/static/dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
 <link href="/static/dwz/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -33,9 +33,9 @@
 
 <script type="text/javascript">
 $(function(){
-	DWZ.init("/static/dwz.frag.xml", {
+	DWZ.init("/static/dwz/dwz.frag.xml", {
 		loginUrl:"/static/dwz/login_dialog.html", loginTitle:"登录",	// 弹出登录对话框
-		loginUrl:"login.html",	// 跳到登录页面
+		loginUrl:"/static/dwz/login.html",	// 跳到登录页面
 		statusCode:{ok:200, error:300, timeout:301}, //【可选】
 		keys: {statusCode:"statusCode", message:"message"}, //【可选】
 		pageInfo:{pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"}, //【可选】
@@ -88,13 +88,13 @@ $(function(){
 
 			<div id="navMenu">
 				<ul>
-					<li class="selected"><a href="/menu/customer"><span>客户管理</span></a></li>
-					<li><a href="/menu/order"><span>订单管理</span></a></li>
-					<li><a href="/menu/product"><span>产品管理</span></a></li>
-					<li><a href="/menu/user"><span>用户管理</span></a></li>
-					<li><a href="/menu/market"><span>营销管理</span></a></li>
-					<li><a href="/menu/service"><span>服务管理</span></a></li>
-					<li><a href="/menu/setting"><span>系统设置</span></a></li>
+					<li class="selected"><a href="/menu/index/customer"><span>客户管理</span></a></li>
+					<li><a href="/menu/index/order"><span>订单管理</span></a></li>
+					<li><a href="/menu/index/product"><span>产品管理</span></a></li>
+					<li><a href="/menu/index/user"><span>用户管理</span></a></li>
+					<li><a href="/menu/index/market"><span>营销管理</span></a></li>
+					<li><a href="/menu/index/service"><span>服务管理</span></a></li>
+					<li><a href="/menu/index/setting"><span>系统设置</span></a></li>
 				</ul>
 			</div>
 		</div>

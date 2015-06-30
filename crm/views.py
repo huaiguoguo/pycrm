@@ -10,6 +10,6 @@ def index(request):
     return render(request, 'index/index.html', locals())
 
 # 左侧菜单
-# def menu(request, menuName):
-#     # name = menuName
-#     # return render(request, 'menu.html', locals())
+def menu(request, menuName):
+    name = menuName
+    return render(request, 'menu.html', locals())

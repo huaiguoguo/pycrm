@@ -32,5 +32,3 @@ class Customer(models.Model):
     wangwang = models.CharField(max_length=10)
     gender = models.IntegerField()
     createdate = models.DateTimeField()
-
-

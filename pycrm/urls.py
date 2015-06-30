@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import include, url, patterns
-from django.conf.urls.static import static
 from django.contrib import admin
 
 
@@ -33,9 +32,10 @@ urlpatterns = patterns(
     url(r'^service/', include('service.urls', namespace='service', app_name='service')),
     url(r'^wechat/', include('wechat.urls', namespace='wechat', app_name='wechat')),
     url(r'^setting/', include('setting.urls', namespace='setting', app_name='setting')),
-    # url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+
     # 下面是左侧菜单
-    # url(r'^menu/(?P<menuName>(\w){1,10})', 'crm.menu.index'),
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^menu/', include('menu.urls', namespace='menu', app_name='menu')),
+)
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
