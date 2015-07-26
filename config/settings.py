@@ -37,16 +37,17 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crm',
-    'customer',
-    'market',
-    'order',
-    'product',
-    'service',
-    'setting',
-    'user',
-    'wechat',
-    'work',
+    'app.crm',
+    'app.customer',
+    'app.market',
+    'app.order',
+    'app.product',
+    'app.service',
+    'app.setting',
+    'app.user',
+    'app.wechat',
+    'app.work',
+    'app.menu',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'pycrm.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pycrm.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -100,9 +101,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'crm',
-        'USER': 'crm',
-        'PASSWORD': 'mycrm',
-        'HOST': '121.42.14.88',
+        'USER': 'root',
+        'PASSWORD': '123',
+        # 'HOST': '121.42.14.88',
+        'HOST': 'localhost',
         'PORT': '3306',
         # 'active': True,
         'option': {

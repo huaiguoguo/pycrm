@@ -1,3 +1,4 @@
+
 <form id="pagerForm" method="post" action="#rel#">
 	<input type="hidden" name="pageNum" value="1" />
 	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
@@ -24,25 +25,6 @@
 			</select>
 			</li>
 		</ul>
-		<!--
-		<table class="searchContent">
-			<tr>
-				<td>
-					我的客户：<input type="text"/>
-				</td>
-				<td>
-					<select class="combox" name="province">
-						<option value="">所有省市</option>
-						<option value="北京">北京</option>
-						<option value="上海">上海</option>
-						<option value="天津">天津</option>
-						<option value="重庆">重庆</option>
-						<option value="广东">广东</option>
-					</select>
-				</td>
-			</tr>
-		</table>
-		-->
 		<div class="subBar">
 			<ul>
 				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
@@ -79,23 +61,22 @@
 			</tr>
 		</thead>
 		<tbody>
-        {% for foo in customerList %}
-			<tr target="cid" rel="{{ foo.id }}">
+			<tr target="cid" rel="">
 				<td><input name="ids" value="xxx" type="checkbox"></td>
-				<td>{{ foo.id }}</td>
-				<td>{{ foo.customername }}</td>
-				<td>{{ foo.company }}</td>
-				<td>{{ foo.qq }}{{ foo.wangwang }}</td>
-				<td>{{ foo.level.levelname }}</td>
-				<td>{{ foo.saler.salername }}</td>
-				<td>{{ foo.industry.industryname }}</td>
-				<td>{{ foo.createdate }}</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 				<td>
 					<a title="删除" target="ajaxTodo" href="" class="btnDel">删除</a>
 					<a title="编辑" target="navTab" href="/customer?id=xxx" class="btnEdit">编辑</a>
 				</td>
 			</tr>
-        {% endfor %}
+
 		</tbody>
 	</table>
 	<div class="panelBar">

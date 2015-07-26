@@ -1,4 +1,3 @@
-from MySQLdb import *
 from django.db import models
 # from django_mongoengine import Document
 
