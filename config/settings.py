@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'crm',
         'USER': 'root',
-        'PASSWORD': 'abcabc',
+        'PASSWORD': '123',
         # 'HOST': '121.42.14.88',
         'HOST': 'localhost',
         'PORT': '3306',

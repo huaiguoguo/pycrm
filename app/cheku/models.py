@@ -2,55 +2,60 @@ from django.db import models
 
 # Create your models here.
 
-#Æ·ÅÆ
-class Brand(models.Model):
-    BrandId = models.IntegerField()#¿ÚÅÆcode
-    BrandName = models.CharField(max_length=20)#Æ·ÅÆÃû³Æ
-
-#³µÏµmodel
+#å“ç‰Œ
+class Brands(models.Model):
+    BrandCode = models.IntegerField()#å£ç‰Œcode
+    BrandName = models.CharField(max_length=40)#å“ç‰Œåç§°
+    BrandPinYin = models.CharField(max_length=40)#å“ç‰Œæ‹¼éŸ³
+    BrandJianPin = models.CharField(max_length=40)#ç®€æ‹¼
+    BrandLogo = models.CharField(max_length=255)#å“ç‰ŒLogo
+    BrandSouPin = models.CharField(max_length=40)#å“ç‰Œé¦–æ‹¼
+    BrandUrl = models.CharField(max_length=255)#å“ç‰ŒURL
+#
+# #è½¦ç³»model
 class Cars(models.Model):
-    CarsCode = models.IntegerField()#³µÏµcode
-    CarsName = models.CharField(max_length=20)#³µÏµÃû³Æ
-    BrandId = models.ForeignKey(Brand, related_name='carsofbrandsforeign')#ËùÊô¿ÚÅÆ
-
-#³µĞÍ
-class  MotorcycleType(models.Model):
-    TypeName = models.CharField(max_length=20)#³µĞÍÃû³Æ
-    CarsId = models.ForeignKey(Cars, related_name='motorcycletypeofcarsforeign')#ËùÊô³µÏµ
-
-class Garage(models.Model):
-    Title = models.CharField(max_length=30)#±êÌâ
-    CarNumber = models.IntegerField()
-    Img = models.CharField(max_length=10)
-    Price = models.FloatField()#¼Û¸ñ
-    BidDate = models.DateField()#¾º¼ÛÊ±¼ä
-    CheckDate = models.DateField()#¼ì²âÊ±¼ä
-    CheckPerson = models.CharField(max_length=20)#¼ì²âÊ¦
-    FactoryDate = models.CharField(max_length=20)#³ö³§ÈÕÆÚ
-    VehicleDefect = models.CharField(max_length=20)#³µÁ¾È±Ïİ
-    ExteriorDefect = models.CharField(max_length=20)#ÍâÊÎÈ±Ïİ
-    InteriorDefect = models.CharField(max_length=30)#ÄÚÊÎÈ±Ïİ
-    ConditionRating = models.CharField(max_length=10)#³µ¿öÆÀ¼¶
-    ExteriorDesction = models.CharField(max_length=50)#ÄÚÊÎÃèÊö
-    InteriorDesction = models.CharField(max_length=50) #ÍâÊÎÃèÊö
-
-    DrivingCard = models.CharField(max_length=10)#ĞĞÊ»Ö¤
-    MotorVehicleCertificate = models.CharField(max_length=10)#»ú¶¯³µµÇ¼ÇÖ¤
-    UseManual = models.CharField(max_length=10)#ÓÃ»§Ê¹ÓÃÊÖ²á
-    MaintenanceManual = models.CharField(max_length=10) #±£ÑøÊÖ²á
-    PurchaseTaxPaymentCertificate = models.CharField(max_length=10) #ÍêË°Ö¤Ã÷
-    CrossStrongInsurancePolicy = models.CharField(max_length=10) #Ç¿½»ÏÕ±£µ¥
-
-    LicenseLoction = models.CharField(max_length=10) #³µÅÆËùÔÚµØ
-    UseProperties = models.CharField(max_length=10) #Ê¹ÓÃĞÔÖÊ
-    AnnualInspectionValidity = models.DateField() #Äê¼ìÓĞĞ§ÆÚ
-    BrandName = models.CharField(max_length=10) #Æ·ÅÆ
-    Brands = models.ForeignKey(Brand, related_name='chekuofbrandforeign')
-    CarsName = models.CharField(max_length=10) #³µÏµ
-    CarId = models.ForeignKey(Cars, related_name='chekuofcarsforeign')
-    LicenseYear = models.DateField() #ÉÏ°æÄê·İ
-    ApparentMileage = models.CharField(max_length=20) #±íÏÔÀï³Ì
-    LicenseNumber = models.CharField(max_length=20) #³µÅÆºÅÂë
-    configure = models.CharField(max_length=255) #ÅäÖÃ
+    CarsCode = models.IntegerField()#è½¦ç³»code
+    CarsName = models.CharField(max_length=20)#è½¦ç³»åç§°
+    BrandId = models.ForeignKey(Brands, related_name='carsofbrandsforeign')#æ‰€å±å“ç‰Œ
+#
+# #è½¦å‹
+# class  MotorcycleType(models.Model):
+#     TypeName = models.CharField(max_length=20)#è½¦å‹åç§°
+#     CarsId = models.ForeignKey(Cars, related_name='motorcycletypeofcarsforeign')#æ‰€å±è½¦ç³»
+#
+# class Garage(models.Model):
+#     Title = models.CharField(max_length=30)#æ ‡é¢˜
+#     CarNumber = models.IntegerField()
+#     Img = models.CharField(max_length=10)
+#     Price = models.FloatField()#ä»·æ ¼
+#     BidDate = models.DateField()#ç«ä»·æ—¶é—´
+#     CheckDate = models.DateField()#æ£€æµ‹æ—¶é—´
+#     CheckPerson = models.CharField(max_length=20)#æ£€æµ‹å¸ˆ
+#     FactoryDate = models.CharField(max_length=20)#å‡ºå‚æ—¥æœŸ
+#     VehicleDefect = models.CharField(max_length=20)#è½¦è¾†ç¼ºé™·
+#     ExteriorDefect = models.CharField(max_length=20)#å¤–é¥°ç¼ºé™·
+#     InteriorDefect = models.CharField(max_length=30)#å†…é¥°ç¼ºé™·
+#     ConditionRating = models.CharField(max_length=10)#è½¦å†µè¯„çº§
+#     ExteriorDesction = models.CharField(max_length=50)#å†…é¥°æè¿°
+#     InteriorDesction = models.CharField(max_length=50) #å¤–é¥°æè¿°
+#
+#     DrivingCard = models.CharField(max_length=10)#è¡Œé©¶è¯
+#     MotorVehicleCertificate = models.CharField(max_length=10)#æœºåŠ¨è½¦ç™»è®°è¯
+#     UseManual = models.CharField(max_length=10)#ç”¨æˆ·ä½¿ç”¨æ‰‹å†Œ
+#     MaintenanceManual = models.CharField(max_length=10) #ä¿å…»æ‰‹å†Œ
+#     PurchaseTaxPaymentCertificate = models.CharField(max_length=10) #å®Œç¨è¯æ˜
+#     CrossStrongInsurancePolicy = models.CharField(max_length=10) #å¼ºäº¤é™©ä¿å•
+#
+#     LicenseLoction = models.CharField(max_length=10) #è½¦ç‰Œæ‰€åœ¨åœ°
+#     UseProperties = models.CharField(max_length=10) #ä½¿ç”¨æ€§è´¨
+#     AnnualInspectionValidity = models.DateField() #å¹´æ£€æœ‰æ•ˆæœŸ
+#     BrandName = models.CharField(max_length=10) #å“ç‰Œ
+#     Brands = models.ForeignKey(Brand, related_name='chekuofbrandforeign')
+#     CarsName = models.CharField(max_length=10) #è½¦ç³»
+#     CarId = models.ForeignKey(Cars, related_name='chekuofcarsforeign')
+#     LicenseYear = models.DateField() #ä¸Šç‰ˆå¹´ä»½
+#     ApparentMileage = models.CharField(max_length=20) #è¡¨æ˜¾é‡Œç¨‹
+#     LicenseNumber = models.CharField(max_length=20) #è½¦ç‰Œå·ç 
+#     configure = models.CharField(max_length=255) #é…ç½®
 
 

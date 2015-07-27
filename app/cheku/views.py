@@ -1,30 +1,70 @@
 #*-*coding:utf8*-*#
+# -*- coding=UTF-8 -*-
 from django.shortcuts import render
 import urllib
 import re
-from pprint import pprint
+import json
+from .models import *
+from django.core.exceptions import ObjectDoesNotExist #数据库model.object.get()的时候会返回一个异常
+from django.http import HttpResponse
+
 
 
 # Create your views here.
-
-# 抓取
-
-
-
-
 def Brand(request):
-    #主页车辆列表信息
-    #car_con下面有 pic  desc -> <p>车辆信息</p> ->  <decs_img><l>价格</l><r>城市</r></desc_img>
+    #车辆品牌
+    # html = gethtml("http://www.kx.cn/chejia/index.php?m=carinfo&c=index&a=ajax_get_brand&brand=0&family=0&pl=0&sp_year=0&cc_year=0&gearbox=0&szd=0&q=0")
+    # MYJSON = json.loads(html)
+    # for key in MYJSON:
+    #     for kk in MYJSON[key]:
+    #         if Brands.objects.filter(BrandName=MYJSON[key][kk]["brand_name"]).exists():
+    #             print("此记录已存在，请不要重复写入")
+    #         else:
+    #             b = Brands()
+    #             b.BrandCode = MYJSON[key][kk]["brand_code"]
+    #             b.BrandName = MYJSON[key][kk]["brand_name"]
+    #             b.BrandPinYin = MYJSON[key][kk]["brand_pinyin"]
+    #             b.BrandJianPin = MYJSON[key][kk]["brand_jianpin"]
+    #             b.BrandLogo = MYJSON[key][kk]["brand_logo"]
+    #             b.BrandSouPin = MYJSON[key][kk]["brand_soupin"]
+    #             b.BrandUrl = MYJSON[key][kk]["url"]
+    #             b.save()
+    #             c = Cars()
+    #             c.BrandId = b.id
+    #             myCars = GetCars(b.BrandUrl)
+    #             c.CarsCode = myCars['CarsCode']
+    #             c.CarsName = myCars['CarsName']
+    #             c.save()
+    myCars = GetCars("http://www.kx.cn/chejia/list-103-0-0-0-0-0-0-1-0")
 
 
+    brandlist = Brands.objects.all()
     return render(request, 'cheku/brand_list.html', locals())
+
+
+
+def GetCars(url):
+    page = urllib.request.urlopen(url).read()
+    page = getresult(page)
+    # mycars = re.findall(r'<li class="car-familylist-btn car-familylist-[\d]{1,4}" code="[\d]{1,4}"><a class="">.*</a></li>', page)
+    print(page)
+    # return page
+
+
+def Car(request):
+    dic = {}
+    dic['message'] = "A beautiful json string response."
+    dic['create_at'] = ""
+    jstr = json.dumps(dic)
+    return HttpResponse(jstr, content_type='application/json')
+    # return render(request, 'cheku/cars_list.html', locals())
+
 
 
 
 
 def index(request):
     html = gethtml("http://www.kx.cn/chejia/jinkouaodiA4-180531")
-
     file = open('thefile.txt', 'a')
     #标题
     title = re.findall(r'</span>.*</h3>', html)
