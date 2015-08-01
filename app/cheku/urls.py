@@ -5,8 +5,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = patterns('app.cheku.views',
-    url(r'^index/$', 'index'),
+    url(r'^index/$', 'zhuaqu'),
     url(r'^brand/$', 'Brand'),
     url(r'^cars/$', 'Cars'),
     url(r'^list/$', 'list'),
+    url(r'^test/$', 'Test'),
 )

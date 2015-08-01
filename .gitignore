@@ -56,6 +56,5 @@ docs/_build/
 # PyBuilder
 target/
 .idea/*
-config/setting.py
 __pycache__/*
 
